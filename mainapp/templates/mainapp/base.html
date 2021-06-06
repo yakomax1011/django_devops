@@ -10,6 +10,7 @@
             {{ title|title }}
         {% endblock %}
     </title>
+
     {% block css %}
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <link rel="stylesheet" href="{% static 'fonts/font-awesome/css/font-awesome.css' %}">
@@ -17,35 +18,48 @@
 
     {% block js %}
     {% endblock %}
+
 </head>
 <body>
-	<div class="container">
-        {% block super %}
-            <div class="header clearfix">
-				<a href="/" class="logo"></a>
-				<ul class="menu">
-				    <li><a href="/" class="active">домой</a></li>
-    				<li><a href="{% url 'products' %}">продукты</a></li>
-    				<li><a href="{% url 'contact' %}">контакты</a></li>
-				</ul>
-				<a href="#" class="search"></a>
-			</div>
-        {% endblock %}
+<div class="container">
 
-        {% block content %}
+    {% block main_index %}
+    {% endblock %}
 
-        {% endblock %}
+    {% block main_contact %}
+    {% endblock %}
 
-	</div>
+    {% block main_products %}
+    {% endblock %}
+
+</div>
 
     {% block footer %}
         <div class="footer">
+            <div class="clearfix">
             <div class="text-footer">
-               <h3>контакты</h3>
+                <h3>контакты</h3>
             </div>
             <div class="text-footer">
-               <h3>полезная информация</h3>
+                <h3>полезная информация</h3>
             </div>
+            <div class="text-footer clearfix">
+                <h3>Оставайтесь на связи</h3>
+                <p>Подписаться на новости и рассылки</p>
+                <form>
+                    <input type="email" name="email" placeholder="ваш email">
+                    <a href="#"><i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i></a>
+                </form>
+            </div>
+            </div>
+            <p class="small">&copy; GB {% now "Y" %}</p>
+            <div class="social">
+                <a href="#" class="social1"></a>
+                <a href="#" class="social2"></a>
+                <a href="#" class="social3"></a>
+                <a href="#" class="social4"></a>
+            </div>
+            <p class="small">Положения &amp; Условия  /  Конфиденциальность &amp; Cookies</p>
         </div>
     {% endblock %}
 
