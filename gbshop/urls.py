@@ -22,4 +22,5 @@ urlpatterns = [
     path('products/', mainapp.products, name='products'),
     path('contact/', mainapp.contact, name='contact'),
     path('admin/', admin.site.urls),
+    path('index_copy', mainapp.main, name='index_copy'),
 ]

@@ -1,7 +1,3 @@
-{% extends 'mainapp/base.html' %}
-{% load static %}
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,12 +9,16 @@
 <body>
 	<div class="container">
 		<div class="slider">
-			{% block super %}:
-			{% endblock %}
+			<div class="header clearfix">
+				<a href="/" class="logo"></a>
+				<ul class="menu">
+				    <li><a href="/" class="active">домой</a></li>
+    				<li><a href="{% url 'products' %}">продукты</a></li>
+    				<li><a href="{% url 'contact' %}">контакты</a></li>
+				</ul>
+				<a href="#" class="search"></a>
+			</div>
 			<div class="text-slider">
-
-
-
 				<h3 class="green">тенденции - {{ date_month }}</h3>
 				<h3 class="big"> удобные стулья</h3>
 				<p>Новый уровень комфорта. Отличные характеристики.</p>

@@ -33,3 +33,6 @@ def products(request):
 
 def contact(request):
     return render(request, 'mainapp/contact.html')
+
+#def index_copy(request):
+#    return render(request, 'mainapp/index_copy.html')
